@@ -1,0 +1,21 @@
+{% extends 'food/base.html' %}
+{% load static %}
+
+<body>
+    {% block body %}
+    {% for it in item %}
+    <div class="row align-items-center">
+        <div class="col-md-3 offset-md-2">
+            <img class="img-fluid" height="350px" width="350px" src="{{it.item_image}}">
+        </div>
+        <div class="col-md-3">
+            <h3>{{ it.item_name}}</h3>
+            <h5>$ {{it.item_price}}</h5>
+        </div>
+        <div class="col-md-4">
+            <a href="/food/{{ it.id }}" class="btn btn-success"> Details </a>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</body>

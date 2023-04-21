@@ -1,0 +1,32 @@
+{% extends 'food/base.html' %}
+{% load static %}
+
+<body>
+
+    
+    {% block body %}
+   
+    
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{item.item_image}}" class="card" height="500px" width="500px">
+
+        </div>
+
+        <div class ="col-md-3">
+        <h1>{{item.item_name}}</h1>
+        <h2>{{item.item_desc}}</h2>
+        <h3>$ {{item.item_price}}</h3>
+        <a href="{% url 'food:delete_item' item.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'food:update_item' item.id %}" class="btn btn-secondary">Update</a>
+        
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+    
